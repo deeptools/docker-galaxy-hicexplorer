@@ -4,6 +4,8 @@ FROM bgruening/galaxy-ngs-preprocessing
 
 MAINTAINER Björn A. Grüning, bjoern.gruening@gmail.com
 
+RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
+
 ENV GALAXY_CONFIG_BRAND HiCExplorer
 ENV ENABLE_TTS_INSTALL True
 
