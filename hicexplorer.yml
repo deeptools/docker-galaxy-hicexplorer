@@ -42,6 +42,6 @@ tools:
 - name: suite_hicexplorer
   owner: bgruening
   tool_panel_section_label: "HiCExplorer"
-  tool_shed_url: https://toolshed.g2.bx.psu.edu
+  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
   install_resolver_dependencies: True
   install_tool_dependencies: False
