@@ -38,10 +38,9 @@
 
 api_key: admin
 galaxy_instance: http://localhost:8080
+install_resolver_dependencies: True
+install_tool_dependencies: False
 tools:
 - name: suite_hicexplorer
   owner: bgruening
   tool_panel_section_label: "HiCExplorer"
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  install_resolver_dependencies: True
-  install_tool_dependencies: False
