@@ -1,6 +1,6 @@
 # Galaxy - HiCExplorer
 
-FROM bgruening/galaxy-ngs-preprocessing:17.05
+FROM bgruening/galaxy-ngs-preprocessing:17.09
 
 MAINTAINER Björn A. Grüning, bjoern.gruening@gmail.com
 
