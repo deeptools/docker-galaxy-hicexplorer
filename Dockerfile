@@ -1,6 +1,6 @@
 # Galaxy - HiCExplorer
 
-FROM quay.io/bgruening/galaxy-ngs-preprocessing:17.09
+FROM quay.io/bgruening/galaxy-ngs-preprocessing:dev
 
 MAINTAINER Björn A. Grüning, bjoern.gruening@gmail.com
 
