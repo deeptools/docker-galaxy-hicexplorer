@@ -77,6 +77,26 @@ In case you encountered problems please use the recommended settings, check the 
 In case you encountered problems please check the [FAQ page](./FAQ.md) or contact us using Issues tab.
 
 
+# Usage - How to run Galaxy-GraphClust:
+
+## Browser access to the server:
+After running the Galaxy server, a web server is established under the host IP/URL and designated port (default 8080).
+
+* Inside your browser goto IP/URL:PORT
+* Following same settings as previous step
+
+  * In the **same local computer**: [http://localhost:8080/](http://localhost:8080)
+  * In **any computer with network connection to the host**: [http://HOSTIP:8080]()
+
+## Help
+
+### Import or upload a workflow
+
+To import or upload an existing workflow, on the top panel go to **Workflow** menu. On top right side of the screen click on **Upload or import workflow** button. You can either upload workflow from your local system or by providing the URL of the workflow. To have an access to workflow menu you must be logged in. You can download workflows from the following links 
+
+  * HiCPlotMatrix: [HiCPlotMatrix per Chromosome](https://github.com/deeptools/docker-galaxy-hicexplorer/blob/master/workflows/HiCExplorer.hicPlotMatrix.perChr.ga)
+  * HiCSumMatrix : [Summing up different matrices](https://github.com/deeptools/docker-galaxy-hicexplorer/blob/master/workflows/HiCExplorer.hicSumMatrix.ga)
+
 # Contributors
 
  - [Joachim Wolff](https://github.com/joachimwolff/)
