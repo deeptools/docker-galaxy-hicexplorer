@@ -1,5 +1,5 @@
 libraries:
-    - name: "RFAM family multiple alignment"
+    - name: "Example datasets from Lieberman-Aiden (SRR027956)"
       files:
           - url: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR027/SRR027956/SRR027956_1.fastq.gz
             file_type: fastq.gz
