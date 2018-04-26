@@ -54,11 +54,6 @@ For more details about this command line or specific usage, please consult the G
 #### Using graphic interface (Windows/MacOS):
 Please check this [step-by-step guide](./kitematic/kitematic.md).
 
-### Demo instance:
-A running demo instance of Galaxy-HiCExplorer is available at http://bit.ly/GalaxyHiCExplorer.
-Please note this instance is exactly the same Docker container which we offer here. It has limited computation 
-capacity and intended for demonstration and testing purposes. Currently it is not planned to have a long-time availability. We recommend to follow instructions above.
-
 #### Setup support:
 In case you encountered problems please use the recommended settings, check the [FAQs](./FAQ.md) or contact us via [*Issues*](https://github.com/deeptools/docker-galaxy-hicexplorer/issues) section of the repository.
 
