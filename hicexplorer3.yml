@@ -41,25 +41,29 @@ galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
-  - name: hicexplorer_hicaggregatecontacts
+  - name: hicexplorer_hicbuildmatrix
     owner: bgruening
     tool_panel_section_label: HiCExplorer
     
-  - name: hicexplorer_hiccomparematrices
+  - name: hicexplorer_hicplotmatrix
     owner: bgruening
     tool_panel_section_label: HiCExplorer
     
-  - name: hicexplorer_hiccorrelate
+  - name: hicexplorer_hicmergematrixbins
+    owner: bgruening
+    tool_panel_section_label: HiCExplorer
+    
+  - name: hicexplorer_hicplottads
+    owner: bgruening
+    tool_panel_section_label: HiCExplorer
+    
+  - name: hicexplorer_hicfindtads
     owner: bgruening
     tool_panel_section_label: HiCExplorer
 
-  - name: hicexplorer_hictransform
+  - name: suite_hicexplorer
     owner: bgruening
-    tool_panel_section_label: HiCExplorer
-    
-  - name: hicexplorer_hicplotviewpoint  
-    owner: bgruening
-    tool_panel_section_label: HiCExplorer
+    tool_panel_section_label: "HiCExplorer"
 
 
 

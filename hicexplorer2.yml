@@ -41,25 +41,23 @@ galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
-  - name: hicexplorer_hicaggregatecontacts
+
+  - name: multiqc
+    owner: iuc
+    tool_panel_section_label: Quality Control
+
+  - name: hicexplorer_hiccorrectmatrix
     owner: bgruening
     tool_panel_section_label: HiCExplorer
     
-  - name: hicexplorer_hiccomparematrices
+  - name: hicexplorer_hicplotdistvscounts
     owner: bgruening
     tool_panel_section_label: HiCExplorer
     
-  - name: hicexplorer_hiccorrelate
-    owner: bgruening
-    tool_panel_section_label: HiCExplorer
-
-  - name: hicexplorer_hictransform
+  - name: hicexplorer_hicpca
     owner: bgruening
     tool_panel_section_label: HiCExplorer
     
-  - name: hicexplorer_hicplotviewpoint  
+  - name: hicexplorer_hicsummatrices
     owner: bgruening
     tool_panel_section_label: HiCExplorer
-
-
-
