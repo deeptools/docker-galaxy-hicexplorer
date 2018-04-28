@@ -10,13 +10,17 @@ ENV GALAXY_CONFIG_BRAND HiCExplorer
 ADD hicexplorer*.yml $GALAXY_ROOT/
 
 RUN install-tools $GALAXY_ROOT/hicexplorer.yml && \
-    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -prune -exec rm -r "{}" \;
+    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -prune -exec rm -r "{}" \; && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null
 RUN install-tools $GALAXY_ROOT/hicexplorer2.yml && \
-    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -prune -exec rm -r "{}" \;
+    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -prune -exec rm -r "{}" \; && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null
 RUN install-tools $GALAXY_ROOT/hicexplorer3.yml && \
-    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -prune -exec rm -r "{}" \;
+    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -prune -exec rm -r "{}" \; && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null
 RUN install-tools $GALAXY_ROOT/hicexplorer4.yml && \
     find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -prune -exec rm -r "{}" \; && \
+    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
     mkdir -p $GALAXY_HOME/workflows
 
 # Add workflows to the Docker image
