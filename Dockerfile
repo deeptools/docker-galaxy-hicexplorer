@@ -11,8 +11,8 @@ ADD hicexplorer*.yml $GALAXY_ROOT/
 
 RUN install-tools $GALAXY_ROOT/hicexplorer.yml
 RUN install-tools $GALAXY_ROOT/hicexplorer2.yml
-RUN install-tools $GALAXY_ROOT/hicexplorer4.yml
-RUN install-tools $GALAXY_ROOT/hicexplorer3.yml && \
+RUN install-tools $GALAXY_ROOT/hicexplorer3.yml
+RUN install-tools $GALAXY_ROOT/hicexplorer4.yml && \
     mkdir -p $GALAXY_HOME/workflows
 
 # Add workflows to the Docker image
