@@ -9,10 +9,14 @@ ENV GALAXY_CONFIG_BRAND HiCExplorer
 # Install tools
 ADD hicexplorer*.yml $GALAXY_ROOT/
 
-RUN install-tools $GALAXY_ROOT/hicexplorer.yml
-RUN install-tools $GALAXY_ROOT/hicexplorer2.yml
-RUN install-tools $GALAXY_ROOT/hicexplorer3.yml
+RUN install-tools $GALAXY_ROOT/hicexplorer.yml && \
+    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -exec rm -r "{}" \;
+RUN install-tools $GALAXY_ROOT/hicexplorer2.yml && \
+    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -exec rm -r "{}" \;
+RUN install-tools $GALAXY_ROOT/hicexplorer3.yml && \
+    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -exec rm -r "{}" \;
 RUN install-tools $GALAXY_ROOT/hicexplorer4.yml && \
+    find /shed_tools/toolshed.g2.bx.psu.edu/ -name "test-data" -type d -exec rm -r "{}" \; && \
     mkdir -p $GALAXY_HOME/workflows
 
 # Add workflows to the Docker image
