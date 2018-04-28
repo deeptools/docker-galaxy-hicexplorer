@@ -38,4 +38,5 @@ ADD https://raw.githubusercontent.com/galaxyproject/training-material/master/top
 
 # Container Style
 ADD assets/img/full_logo.png $GALAXY_CONFIG_DIR/web/welcome_image.png
+ADD assets/img/publication_plots.png $GALAXY_CONFIG_DIR/web/welcome_publication_plots.png
 ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
