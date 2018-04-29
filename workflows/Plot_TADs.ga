@@ -1,0 +1,179 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Plot TADs", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Input dataset collection", 
+            "outputs": [], 
+            "position": {
+                "left": 200, 
+                "top": 212
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"collection_type\": \"list\"}", 
+            "tool_version": null, 
+            "type": "data_collection_input", 
+            "uuid": "9b1c6783-d378-44c3-9366-2f4689364c8d", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "output", 
+                    "uuid": "72dacd4d-ddf5-408e-b770-47df40c25e49"
+                }
+            ]
+        }, 
+        "1": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicfindtads/hicexplorer_hicfindtads/2.1.2.0", 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {
+                "matrix_h5_cooler": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool hicFindTADs", 
+                    "name": "matrix_h5_cooler"
+                }
+            ], 
+            "label": null, 
+            "name": "hicFindTADs", 
+            "outputs": [
+                {
+                    "name": "boundaries", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "score", 
+                    "type": "bedgraph"
+                }, 
+                {
+                    "name": "domains", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "boundaries_bin", 
+                    "type": "gff"
+                }, 
+                {
+                    "name": "tad_score", 
+                    "type": "bedgraph"
+                }, 
+                {
+                    "name": "matrix_output", 
+                    "type": "h5"
+                }
+            ], 
+            "position": {
+                "left": 476.5, 
+                "top": 368
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionboundaries": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "boundaries"
+                }, 
+                "HideDatasetActionboundaries_bin": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "boundaries_bin"
+                }, 
+                "HideDatasetActiondomains": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "domains"
+                }, 
+                "HideDatasetActionmatrix_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "matrix_output"
+                }, 
+                "HideDatasetActionscore": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "score"
+                }, 
+                "HideDatasetActiontad_score": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "tad_score"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicfindtads/hicexplorer_hicfindtads/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "b05f292d220c", 
+                "name": "hicexplorer_hicfindtads", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"minBoundaryDistance\": \"\\\"\\\"\", \"__page__\": null, \"minDepth\": \"\\\"40000\\\"\", \"multiple_comparison_conditional\": \"{\\\"multiple_comparison_selector\\\": \\\"fdr\\\", \\\"threshold\\\": \\\"0.01\\\", \\\"__current_case__\\\": 0}\", \"__rerun_remap_job_id__\": null, \"step\": \"\\\"10000\\\"\", \"maxDepth\": \"\\\"100000\\\"\", \"delta\": \"\\\"0.001\\\"\", \"matrix_h5_cooler\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "4beebad5-9e74-4649-885f-f38634178082", 
+            "workflow_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicplottads/hicexplorer_hicplottads/2.1.2.0", 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {
+                "tracks_0|track_file_style_conditional|boundaries_file": {
+                    "id": 1, 
+                    "output_name": "domains"
+                }, 
+                "tracks_0|track_file_style_conditional|matrix_h5_cooler": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "hicPlotTADs", 
+            "outputs": [
+                {
+                    "name": "outFileName", 
+                    "type": "png"
+                }
+            ], 
+            "position": {
+                "left": 857.5, 
+                "top": 265
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicplottads/hicexplorer_hicplottads/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "7e535e3b71f3", 
+                "name": "hicexplorer_hicplottads", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"region\": \"\\\"\\\"\", \"image_file_format\": \"\\\"png\\\"\", \"tracks\": \"[{\\\"__index__\\\": 0, \\\"track_file_style_conditional\\\": {\\\"boundaries_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"type\\\": null, \\\"colormap\\\": \\\"RdYlBu_r\\\", \\\"title\\\": \\\"\\\", \\\"track_file_style_selector\\\": \\\"hic_matrix_option\\\", \\\"min_value\\\": \\\"\\\", \\\"width_matrix\\\": \\\"1.5\\\", \\\"transform\\\": \\\"log1p\\\", \\\"x_labels\\\": \\\"false\\\", \\\"depth\\\": \\\"8000000\\\", \\\"show_masked_bins\\\": \\\"false\\\", \\\"__current_case__\\\": 0, \\\"max_value\\\": \\\"\\\", \\\"scale_factor\\\": \\\"1.0\\\", \\\"matrix_h5_cooler\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}}]\", \"__rerun_remap_job_id__\": null, \"x_axis\": \"{\\\"__current_case__\\\": 1, \\\"x_axis_select\\\": \\\"no\\\"}\"}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "4fe54bfd-e2a1-44a1-a9d5-293cd9b7e28e", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "outFileName", 
+                    "uuid": "2394be83-0b77-49e2-a131-2fccb25f4218"
+                }
+            ]
+        }
+    }, 
+    "tags": [], 
+    "uuid": "d2553ddd-601e-48ab-8317-80199e300583"
+}

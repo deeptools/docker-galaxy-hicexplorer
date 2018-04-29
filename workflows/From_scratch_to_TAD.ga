@@ -1,0 +1,319 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "From scratch to TAD", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": "Forward strand", 
+            "name": "Input dataset collection", 
+            "outputs": [], 
+            "position": {
+                "left": 186, 
+                "top": 246
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"collection_type\": \"list\"}", 
+            "tool_version": null, 
+            "type": "data_collection_input", 
+            "uuid": "f2d3f01e-ac7f-459a-adc9-03a4c25fee24", 
+            "workflow_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": "Reverse strand", 
+            "name": "Input dataset collection", 
+            "outputs": [], 
+            "position": {
+                "left": 186, 
+                "top": 347
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"collection_type\": \"list\"}", 
+            "tool_version": null, 
+            "type": "data_collection_input", 
+            "uuid": "5b8fc443-f750-4453-b70a-5f4855bddce3", 
+            "workflow_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {
+                "paired|fastq": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with BWA-MEM", 
+                    "name": "paired"
+                }
+            ], 
+            "label": null, 
+            "name": "Map with BWA-MEM", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "sam"
+                }
+            ], 
+            "position": {
+                "left": 528.5, 
+                "top": 233
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "ebb02ba5987c", 
+                "name": "bwa_mem", 
+                "owner": "crs4", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"genomeSource\": \"{\\\"indices\\\": \\\"TAIR10\\\", \\\"refGenomeSource\\\": \\\"indexed\\\", \\\"__current_case__\\\": 0}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"paired\": \"{\\\"interPairEnd\\\": \\\"false\\\", \\\"fastq\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"sPaired\\\": \\\"single\\\", \\\"__current_case__\\\": 0}\", \"params\": \"{\\\"minEditDistSeed\\\": \\\"19\\\", \\\"seqMatch\\\": \\\"1\\\", \\\"clipping\\\": \\\"0\\\", \\\"offDiagonal\\\": \\\"100\\\", \\\"seedsOccurrence\\\": \\\"10000\\\", \\\"minScore\\\": \\\"30\\\", \\\"gapOpen\\\": \\\"6\\\", \\\"mismatch\\\": \\\"4\\\", \\\"outputAll\\\": \\\"false\\\", \\\"unpairedReadpair\\\": \\\"17\\\", \\\"gapExtension\\\": \\\"50\\\", \\\"skipPairing\\\": \\\"false\\\", \\\"bandWidth\\\": \\\"100\\\", \\\"readGroup\\\": {\\\"__current_case__\\\": 1, \\\"specReadGroup\\\": \\\"no\\\"}, \\\"mateRescue\\\": \\\"false\\\", \\\"__current_case__\\\": 1, \\\"mark\\\": \\\"false\\\", \\\"internalSeeds\\\": \\\"1.5\\\", \\\"source_select\\\": \\\"full\\\"}\", \"suppressHeader\": \"\\\"false\\\"\"}", 
+            "tool_version": "0.8.0", 
+            "type": "tool", 
+            "uuid": "052594c7-7ba5-41df-9eb7-81ae1271d836", 
+            "workflow_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "errors": null, 
+            "id": 3, 
+            "input_connections": {
+                "paired|fastq": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with BWA-MEM", 
+                    "name": "paired"
+                }
+            ], 
+            "label": null, 
+            "name": "Map with BWA-MEM", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "sam"
+                }
+            ], 
+            "position": {
+                "left": 510.5, 
+                "top": 359
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "ebb02ba5987c", 
+                "name": "bwa_mem", 
+                "owner": "crs4", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"genomeSource\": \"{\\\"indices\\\": \\\"TAIR10\\\", \\\"refGenomeSource\\\": \\\"indexed\\\", \\\"__current_case__\\\": 0}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"paired\": \"{\\\"interPairEnd\\\": \\\"false\\\", \\\"fastq\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"sPaired\\\": \\\"single\\\", \\\"__current_case__\\\": 0}\", \"params\": \"{\\\"minEditDistSeed\\\": \\\"19\\\", \\\"seqMatch\\\": \\\"1\\\", \\\"clipping\\\": \\\"1\\\", \\\"offDiagonal\\\": \\\"100\\\", \\\"seedsOccurrence\\\": \\\"10000\\\", \\\"minScore\\\": \\\"30\\\", \\\"gapOpen\\\": \\\"6\\\", \\\"mismatch\\\": \\\"4\\\", \\\"outputAll\\\": \\\"false\\\", \\\"unpairedReadpair\\\": \\\"17\\\", \\\"gapExtension\\\": \\\"50\\\", \\\"skipPairing\\\": \\\"false\\\", \\\"bandWidth\\\": \\\"100\\\", \\\"readGroup\\\": {\\\"__current_case__\\\": 1, \\\"specReadGroup\\\": \\\"no\\\"}, \\\"mateRescue\\\": \\\"false\\\", \\\"__current_case__\\\": 1, \\\"mark\\\": \\\"false\\\", \\\"internalSeeds\\\": \\\"1.5\\\", \\\"source_select\\\": \\\"full\\\"}\", \"suppressHeader\": \"\\\"false\\\"\"}", 
+            "tool_version": "0.8.0", 
+            "type": "tool", 
+            "uuid": "771e763c-0b4a-4d94-bd6e-73c99d54a044", 
+            "workflow_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicbuildmatrix/hicexplorer_hicbuildmatrix/2.1.2.0", 
+            "errors": null, 
+            "id": 4, 
+            "input_connections": {
+                "samFiles_0|samFile": {
+                    "id": 2, 
+                    "output_name": "output"
+                }, 
+                "samFiles_1|samFile": {
+                    "id": 3, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "hicBuildMatrix", 
+            "outputs": [
+                {
+                    "name": "outBam", 
+                    "type": "bam"
+                }, 
+                {
+                    "name": "outFileName", 
+                    "type": "h5"
+                }, 
+                {
+                    "name": "qc", 
+                    "type": "html"
+                }, 
+                {
+                    "name": "raw_qc", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 824.5, 
+                "top": 210
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutBam": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "outBam"
+                }, 
+                "HideDatasetActionoutFileName": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "outFileName"
+                }, 
+                "HideDatasetActionqc": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "qc"
+                }, 
+                "HideDatasetActionraw_qc": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "raw_qc"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicbuildmatrix/hicexplorer_hicbuildmatrix/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "495ae38f6e0d", 
+                "name": "hicexplorer_hicbuildmatrix", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"outputFormat\": \"\\\"h5\\\"\", \"outBam_Boolean\": \"\\\"false\\\"\", \"restrictionSequence\": \"\\\"\\\"\", \"region\": \"\\\"\\\"\", \"restrictionCutFileBinSize_conditional\": \"{\\\"__current_case__\\\": 1, \\\"restrictionCutFileBinSize_selector\\\": \\\"optionBinSize\\\", \\\"binSize\\\": \\\"\\\"}\", \"samFiles\": \"[{\\\"__index__\\\": 0, \\\"samFile\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}, {\\\"__index__\\\": 1, \\\"samFile\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}]\", \"danglingSequence\": \"\\\"\\\"\", \"minMappingQuality\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"keepSelfCircles\": \"\\\"false\\\"\"}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "f3e4b9e1-c1f2-4940-8416-da968a1d1ca7", 
+            "workflow_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicfindtads/hicexplorer_hicfindtads/2.1.2.0", 
+            "errors": null, 
+            "id": 5, 
+            "input_connections": {
+                "matrix_h5_cooler": {
+                    "id": 4, 
+                    "output_name": "outFileName"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool hicFindTADs", 
+                    "name": "matrix_h5_cooler"
+                }
+            ], 
+            "label": null, 
+            "name": "hicFindTADs", 
+            "outputs": [
+                {
+                    "name": "boundaries", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "score", 
+                    "type": "bedgraph"
+                }, 
+                {
+                    "name": "domains", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "boundaries_bin", 
+                    "type": "gff"
+                }, 
+                {
+                    "name": "tad_score", 
+                    "type": "bedgraph"
+                }, 
+                {
+                    "name": "matrix_output", 
+                    "type": "h5"
+                }
+            ], 
+            "position": {
+                "left": 1153.5, 
+                "top": 211
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicfindtads/hicexplorer_hicfindtads/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "b05f292d220c", 
+                "name": "hicexplorer_hicfindtads", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"minBoundaryDistance\": \"\\\"\\\"\", \"__page__\": null, \"minDepth\": \"\\\"40000\\\"\", \"multiple_comparison_conditional\": \"{\\\"multiple_comparison_selector\\\": \\\"fdr\\\", \\\"threshold\\\": \\\"0.01\\\", \\\"__current_case__\\\": 0}\", \"__rerun_remap_job_id__\": null, \"step\": \"\\\"10000\\\"\", \"maxDepth\": \"\\\"100000\\\"\", \"delta\": \"\\\"0.001\\\"\", \"matrix_h5_cooler\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "f47559d4-9a8e-4ba9-a20b-47382b478907", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "boundaries_bin", 
+                    "uuid": "d602a6da-1794-4899-a6c9-cbfb429b5a36"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "boundaries", 
+                    "uuid": "53c8c44d-0fb9-4721-b503-7cc15c0806ce"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "tad_score", 
+                    "uuid": "9317a83a-ba06-4a67-b0e4-e55169eab167"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "score", 
+                    "uuid": "dedca480-8941-4330-abf0-c8c7309a6aa5"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "domains", 
+                    "uuid": "177d1828-f670-44ce-83d9-f058e02b4b24"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "matrix_output", 
+                    "uuid": "4605dd61-026d-4193-8a75-eed2e52b9a2d"
+                }
+            ]
+        }
+    }, 
+    "tags": [], 
+    "uuid": "8f5588b9-844c-4531-bfb2-dac323ce23b3"
+}

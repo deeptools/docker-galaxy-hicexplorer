@@ -31,9 +31,9 @@ ENV GALAXY_CONFIG_TOOL_PATH=/galaxy-central/tools/
 ADD https://raw.githubusercontent.com/galaxyproject/training-material/master/topics/epigenetics/tutorials/hicexplorer/tours/tour.yaml $GALAXY_ROOT/config/plugins/tours/hicexplorer.yaml
 
 # Download training data and populate the data library
-#RUN startup_lite && \
-#    galaxy-wait && \
-#    workflow-install --workflow_path $GALAXY_HOME/workflows/ -g http://localhost:8080 -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
+RUN startup_lite && \
+    galaxy-wait && \
+    workflow-install --workflow_path $GALAXY_HOME/workflows/ -g http://localhost:8080 -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
 
 
 # Container Style

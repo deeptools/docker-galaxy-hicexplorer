@@ -1,0 +1,237 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "From scratch to a contact matrix", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": "Forward strand", 
+            "name": "Input dataset collection", 
+            "outputs": [], 
+            "position": {
+                "left": 186, 
+                "top": 346
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"collection_type\": \"list\"}", 
+            "tool_version": null, 
+            "type": "data_collection_input", 
+            "uuid": "d65cbab8-f7d9-4d4a-b2a8-acb12ac26762", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "output", 
+                    "uuid": "c6423d15-1756-4ab6-a8f6-e20a97606690"
+                }
+            ]
+        }, 
+        "1": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": "Reverse strand", 
+            "name": "Input dataset collection", 
+            "outputs": [], 
+            "position": {
+                "left": 186, 
+                "top": 447
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"collection_type\": \"list\"}", 
+            "tool_version": null, 
+            "type": "data_collection_input", 
+            "uuid": "39656694-685f-4da5-8b32-8f2f12078f83", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "output", 
+                    "uuid": "413290c6-a496-4f9e-93b9-6e4eb6184dc9"
+                }
+            ]
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {
+                "paired|fastq": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with BWA-MEM", 
+                    "name": "paired"
+                }
+            ], 
+            "label": null, 
+            "name": "Map with BWA-MEM", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "sam"
+                }
+            ], 
+            "position": {
+                "left": 528.5, 
+                "top": 333
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "ebb02ba5987c", 
+                "name": "bwa_mem", 
+                "owner": "crs4", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"genomeSource\": \"{\\\"indices\\\": \\\"TAIR10\\\", \\\"refGenomeSource\\\": \\\"indexed\\\", \\\"__current_case__\\\": 0}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"paired\": \"{\\\"interPairEnd\\\": \\\"false\\\", \\\"fastq\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"sPaired\\\": \\\"single\\\", \\\"__current_case__\\\": 0}\", \"params\": \"{\\\"minEditDistSeed\\\": \\\"19\\\", \\\"seqMatch\\\": \\\"1\\\", \\\"clipping\\\": \\\"0\\\", \\\"offDiagonal\\\": \\\"100\\\", \\\"seedsOccurrence\\\": \\\"10000\\\", \\\"minScore\\\": \\\"30\\\", \\\"gapOpen\\\": \\\"6\\\", \\\"mismatch\\\": \\\"4\\\", \\\"outputAll\\\": \\\"false\\\", \\\"unpairedReadpair\\\": \\\"17\\\", \\\"gapExtension\\\": \\\"50\\\", \\\"skipPairing\\\": \\\"false\\\", \\\"bandWidth\\\": \\\"100\\\", \\\"readGroup\\\": {\\\"__current_case__\\\": 1, \\\"specReadGroup\\\": \\\"no\\\"}, \\\"mateRescue\\\": \\\"false\\\", \\\"__current_case__\\\": 1, \\\"mark\\\": \\\"false\\\", \\\"internalSeeds\\\": \\\"1.5\\\", \\\"source_select\\\": \\\"full\\\"}\", \"suppressHeader\": \"\\\"false\\\"\"}", 
+            "tool_version": "0.8.0", 
+            "type": "tool", 
+            "uuid": "4a6d2ae5-0374-4b75-9e67-e60c14186d3f", 
+            "workflow_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "errors": null, 
+            "id": 3, 
+            "input_connections": {
+                "paired|fastq": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with BWA-MEM", 
+                    "name": "paired"
+                }
+            ], 
+            "label": null, 
+            "name": "Map with BWA-MEM", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "sam"
+                }
+            ], 
+            "position": {
+                "left": 510.5, 
+                "top": 459
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/crs4/bwa_mem/bwa_mem/0.8.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "ebb02ba5987c", 
+                "name": "bwa_mem", 
+                "owner": "crs4", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"genomeSource\": \"{\\\"indices\\\": \\\"TAIR10\\\", \\\"refGenomeSource\\\": \\\"indexed\\\", \\\"__current_case__\\\": 0}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"paired\": \"{\\\"interPairEnd\\\": \\\"false\\\", \\\"fastq\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"sPaired\\\": \\\"single\\\", \\\"__current_case__\\\": 0}\", \"params\": \"{\\\"minEditDistSeed\\\": \\\"19\\\", \\\"seqMatch\\\": \\\"1\\\", \\\"clipping\\\": \\\"1\\\", \\\"offDiagonal\\\": \\\"100\\\", \\\"seedsOccurrence\\\": \\\"10000\\\", \\\"minScore\\\": \\\"30\\\", \\\"gapOpen\\\": \\\"6\\\", \\\"mismatch\\\": \\\"4\\\", \\\"outputAll\\\": \\\"false\\\", \\\"unpairedReadpair\\\": \\\"17\\\", \\\"gapExtension\\\": \\\"50\\\", \\\"skipPairing\\\": \\\"false\\\", \\\"bandWidth\\\": \\\"100\\\", \\\"readGroup\\\": {\\\"__current_case__\\\": 1, \\\"specReadGroup\\\": \\\"no\\\"}, \\\"mateRescue\\\": \\\"false\\\", \\\"__current_case__\\\": 1, \\\"mark\\\": \\\"false\\\", \\\"internalSeeds\\\": \\\"1.5\\\", \\\"source_select\\\": \\\"full\\\"}\", \"suppressHeader\": \"\\\"false\\\"\"}", 
+            "tool_version": "0.8.0", 
+            "type": "tool", 
+            "uuid": "3744db0b-6ada-4bcf-941a-5e41e82a879d", 
+            "workflow_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicbuildmatrix/hicexplorer_hicbuildmatrix/2.1.2.0", 
+            "errors": null, 
+            "id": 4, 
+            "input_connections": {
+                "samFiles_0|samFile": {
+                    "id": 2, 
+                    "output_name": "output"
+                }, 
+                "samFiles_1|samFile": {
+                    "id": 3, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "hicBuildMatrix", 
+            "outputs": [
+                {
+                    "name": "outBam", 
+                    "type": "bam"
+                }, 
+                {
+                    "name": "outFileName", 
+                    "type": "h5"
+                }, 
+                {
+                    "name": "qc", 
+                    "type": "html"
+                }, 
+                {
+                    "name": "raw_qc", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 824.5, 
+                "top": 309
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicbuildmatrix/hicexplorer_hicbuildmatrix/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "495ae38f6e0d", 
+                "name": "hicexplorer_hicbuildmatrix", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"outputFormat\": \"\\\"h5\\\"\", \"outBam_Boolean\": \"\\\"false\\\"\", \"restrictionSequence\": \"\\\"\\\"\", \"region\": \"\\\"\\\"\", \"restrictionCutFileBinSize_conditional\": \"{\\\"__current_case__\\\": 1, \\\"restrictionCutFileBinSize_selector\\\": \\\"optionBinSize\\\", \\\"binSize\\\": \\\"\\\"}\", \"samFiles\": \"[{\\\"__index__\\\": 0, \\\"samFile\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}, {\\\"__index__\\\": 1, \\\"samFile\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}]\", \"danglingSequence\": \"\\\"\\\"\", \"minMappingQuality\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"keepSelfCircles\": \"\\\"false\\\"\"}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "153da939-7eae-4b4b-8c12-70718abe8c50", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "outFileName", 
+                    "uuid": "a28bdfa6-c0a4-4083-adc8-eb18e4989abf"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "outBam", 
+                    "uuid": "30b939a8-c1d2-4162-9fbd-4d029b9490fa"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "raw_qc", 
+                    "uuid": "d5b01383-7e05-46b8-a896-777c0a05e5a7"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "qc", 
+                    "uuid": "56341fc8-a55a-471c-81b8-589466eb1d45"
+                }
+            ]
+        }
+    }, 
+    "tags": [], 
+    "uuid": "ecbcc587-5c61-464b-ad4f-2c0153614769"
+}

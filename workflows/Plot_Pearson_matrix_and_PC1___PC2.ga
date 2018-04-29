@@ -1,0 +1,266 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Plot Pearson matrix and PC1 / PC2", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": "HiCExplorer matrix or cool matrix", 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 244, 
+                "top": 490
+            }, 
+            "tool_id": null, 
+            "tool_state": "{}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "7cbefb1a-94d2-45ad-914e-71b1567f3360", 
+            "workflow_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hictransform/hicexplorer_hictransform/2.1.2.0", 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {
+                "matrix_h5_cooler": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool hicTransform", 
+                    "name": "matrix_h5_cooler"
+                }
+            ], 
+            "label": null, 
+            "name": "hicTransform", 
+            "outputs": [
+                {
+                    "name": "obs_exp", 
+                    "type": "h5"
+                }, 
+                {
+                    "name": "pearson", 
+                    "type": "h5"
+                }, 
+                {
+                    "name": "covariance", 
+                    "type": "h5"
+                }
+            ], 
+            "position": {
+                "left": 490.5, 
+                "top": 262
+            }, 
+            "post_job_actions": {
+                "HideDatasetActioncovariance": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "covariance"
+                }, 
+                "HideDatasetActionobs_exp": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "obs_exp"
+                }, 
+                "HideDatasetActionpearson": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "pearson"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hictransform/hicexplorer_hictransform/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "d5bf6e7d3800", 
+                "name": "hicexplorer_hictransform", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"outputFormat\": \"\\\"h5\\\"\", \"matrix_h5_cooler\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "0b9da8f8-8afc-4073-a8a3-3b7ea1a8080f", 
+            "workflow_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicpca/hicexplorer_hicpca/2.1.2.0", 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {
+                "matrix_h5_cooler": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool hicPCA", 
+                    "name": "matrix_h5_cooler"
+                }
+            ], 
+            "label": null, 
+            "name": "hicPCA", 
+            "outputs": [
+                {
+                    "name": "pca1", 
+                    "type": "bigwig"
+                }, 
+                {
+                    "name": "pca2", 
+                    "type": "bigwig"
+                }
+            ], 
+            "position": {
+                "left": 483, 
+                "top": 555
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionpca1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "pca1"
+                }, 
+                "HideDatasetActionpca2": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "pca2"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicpca/hicexplorer_hicpca/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "38a612a120a8", 
+                "name": "hicexplorer_hicpca", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"outputFormat\": \"\\\"bigwig\\\"\", \"matrix_h5_cooler\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "05275c6a-b97a-4383-b46d-8149a52e5b60", 
+            "workflow_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicplotmatrix/hicexplorer_hicplotmatrix/2.1.2.0", 
+            "errors": null, 
+            "id": 3, 
+            "input_connections": {
+                "matrix_h5_cooler": {
+                    "id": 1, 
+                    "output_name": "pearson"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool hicPlotMatrix", 
+                    "name": "matrix_h5_cooler"
+                }, 
+                {
+                    "description": "runtime parameter for tool hicPlotMatrix", 
+                    "name": "pca_conditional"
+                }
+            ], 
+            "label": "First eigenvector pearson", 
+            "name": "hicPlotMatrix", 
+            "outputs": [
+                {
+                    "name": "outFileName", 
+                    "type": "png"
+                }
+            ], 
+            "position": {
+                "left": 846, 
+                "top": 263
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicplotmatrix/hicexplorer_hicplotmatrix/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "653c6fead9f9", 
+                "name": "hicexplorer_hicplotmatrix", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"perChromosome\": \"\\\"true\\\"\", \"__page__\": null, \"chromosomeOrder\": \"[]\", \"colormap\": \"\\\"hot\\\"\", \"vMin\": \"\\\"\\\"\", \"title\": \"\\\"Principal Component 1\\\"\", \"matrix_h5_cooler\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"scoreName\": \"\\\"\\\"\", \"image_file_format\": \"\\\"svg\\\"\", \"region2\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"vMax\": \"\\\"\\\"\", \"region\": \"\\\"\\\"\", \"log1p\": \"\\\"false\\\"\", \"clearMaskedBins\": \"\\\"false\\\"\", \"pca_conditional\": \"{\\\"pca_bigwig\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"__current_case__\\\": 1, \\\"pca_type\\\": \\\"bigwig\\\"}\", \"log\": \"\\\"false\\\"\"}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "df6df7f4-cdea-42e6-9908-f37d44eb4f9c", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "outFileName", 
+                    "uuid": "858870c0-8bc1-4b03-bbbe-1c85d63a1a18"
+                }
+            ]
+        }, 
+        "4": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicplotmatrix/hicexplorer_hicplotmatrix/2.1.2.0", 
+            "errors": null, 
+            "id": 4, 
+            "input_connections": {
+                "matrix_h5_cooler": {
+                    "id": 1, 
+                    "output_name": "pearson"
+                }, 
+                "pca_conditional|pca_bigwig": {
+                    "id": 2, 
+                    "output_name": "pca2"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool hicPlotMatrix", 
+                    "name": "matrix_h5_cooler"
+                }, 
+                {
+                    "description": "runtime parameter for tool hicPlotMatrix", 
+                    "name": "pca_conditional"
+                }
+            ], 
+            "label": "Second eigenvector pearson", 
+            "name": "hicPlotMatrix", 
+            "outputs": [
+                {
+                    "name": "outFileName", 
+                    "type": "png"
+                }
+            ], 
+            "position": {
+                "left": 851, 
+                "top": 487
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hicexplorer_hicplotmatrix/hicexplorer_hicplotmatrix/2.1.2.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "653c6fead9f9", 
+                "name": "hicexplorer_hicplotmatrix", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"perChromosome\": \"\\\"true\\\"\", \"__page__\": null, \"chromosomeOrder\": \"[]\", \"colormap\": \"\\\"hot\\\"\", \"vMin\": \"\\\"\\\"\", \"title\": \"\\\"Principal Component 2\\\"\", \"matrix_h5_cooler\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"scoreName\": \"\\\"\\\"\", \"image_file_format\": \"\\\"svg\\\"\", \"region2\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"vMax\": \"\\\"\\\"\", \"region\": \"\\\"\\\"\", \"log1p\": \"\\\"false\\\"\", \"clearMaskedBins\": \"\\\"false\\\"\", \"pca_conditional\": \"{\\\"pca_bigwig\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"__current_case__\\\": 1, \\\"pca_type\\\": \\\"bigwig\\\"}\", \"log\": \"\\\"false\\\"\"}", 
+            "tool_version": "2.1.2.0", 
+            "type": "tool", 
+            "uuid": "4fdee712-e80d-476e-bb25-363bca22dfed", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "outFileName", 
+                    "uuid": "8be14517-0e96-41c3-bf50-f062ed7c993b"
+                }
+            ]
+        }
+    }, 
+    "tags": [], 
+    "uuid": "694326ec-82bf-4edc-a817-ca8df598a905"
+}
