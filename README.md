@@ -46,7 +46,7 @@ Docker supports the three major desktop operating systems  Linux, Windows and Ma
 #### From the command line (Linux/Windows/MacOS):
 
 ```bash
-docker run -i -t -p 8080:80 bgruening/galaxy-hicexplorer
+docker run -i -t -p 8080:80 quay.io/bgruening/galaxy-hicexplorer
 ```
 
 For more details about this command line or specific usage, please consult the Galaxy Docker [`guide`](https://github.com/bgruening/docker-galaxy-stable/blob/master/README.md).
