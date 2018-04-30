@@ -49,7 +49,11 @@ tools:
   - name: hicexplorer_hiccorrectmatrix
     owner: bgruening
     tool_panel_section_label: HiCExplorer
-    
+
+  - name: bwa_mem
+    owner: crs4
+    tool_panel_section_label: HiCExplorer
+
   - name: hicexplorer_hicplotdistvscounts
     owner: bgruening
     tool_panel_section_label: HiCExplorer
